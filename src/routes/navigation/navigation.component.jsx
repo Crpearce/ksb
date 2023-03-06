@@ -1,25 +1,28 @@
-import data from './data';
-import logo from '../../assets/ksb-logo.jpg'
+import data from "./data";
+import logo from "../../assets/ksb-logo.jpg";
 import "./navigation.styles.css";
+import { Outlet } from "react-router-dom";
+
 
 const Navigation = () => {
-    return (
-        <nav>
-        <div className="nav-container">
-          <a href="/" aria-label='link to home'>
-            <img src={logo} alt='ksb main logo' className="logo"/>
-          </a>
-          <ul className="nav-menu">
-            {data.map((category) => (
-              <li key={category.id}>
-                <a href={category.link} >{category.title}</a>
-              </li>
-            ))}
-          </ul>
-          {/* <button id="theme-icon" aria-label='darkmode toggle' onClick={showModalHandler}><MdOutlineDarkMode className="moon"/></button> */}
-        </div>
-      </nav>
-    );
-}
+  return (
+    <nav>
+      <div className="nav-container">
+        <a href="/" aria-label="link to home">
+          <img src={logo} alt="ksb main logo" className="logo" />
+        </a>
+        <ul className="nav-menu">
+          {data.map((category) => (
+            <li key={category.id}>
+              <a href={category.link}>{category.title}</a>
+            </li>
+          ))}
+        </ul>
+        {/* <button id="theme-icon" aria-label='darkmode toggle' onClick={showModalHandler}><MdOutlineDarkMode className="moon"/></button> */}
+      </div>
+      <Outlet />
+    </nav>
+  );
+};
 
 export default Navigation;

@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <Routes>
+    <Routes className='App-container'>
       <Route path='/' element={<Navigation />}>
         <Route index element={<Home />} />
       </Route>
